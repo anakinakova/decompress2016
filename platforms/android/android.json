@@ -35,6 +35,10 @@
                         {
                             "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -90,6 +94,9 @@
             "PACKAGE_NAME": "com.phonegap.helloworld"
         },
         "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
         }
     },
@@ -288,6 +295,13 @@
             "clobbers": [
                 "Connection"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+            "id": "cordova-plugin-x-socialsharing.SocialSharing",
+            "clobbers": [
+                "window.plugins.socialsharing"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -298,6 +312,7 @@
         "cordova-plugin-file": "4.3.0",
         "cordova-plugin-media": "2.3.0",
         "cordova-plugin-splashscreen": "3.1.0",
-        "cordova-plugin-network-information": "1.3.0"
+        "cordova-plugin-network-information": "1.3.0",
+        "cordova-plugin-x-socialsharing": "5.1.3"
     }
 }

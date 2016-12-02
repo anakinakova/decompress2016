@@ -192,33 +192,45 @@
          </div>
        </form>
 
-       <div class="content-block searchbar-not-found">
-         No matches found
-       </div>
-
+      <div class="searchbar-overlay"></div>
         <div class="page-content">
+          <div class="content-block searchbar-not-found">No matches found</div>
           <div class="content-block-title">{{tracks.count}} tracks returned</div>
+
           <div class="list-block media-list list-block-search searchbar-found">
             <ul>
               {{#each tracks.items}}
-              <li>
-                <a href="#" class="item-link item-content"
-                  data-item="{{@index}}"
-                  data-context="{{stringify this}}"
-                  data-template="details"
-                >
-                  <div class="item-media">
-                    <img width="80" src="{{this.album.images[0].url}}">
-                  </div>
-                  <div class="item-inner">
-                    <div class="item-title-row">
-                      <div class="item-title">{{this.name}}</div>
-                      <div class="item-after">{{durationFromMs this.duration_ms}}</div>
+              <li class="swipeout">
+                <div class="swipeout-content">
+                  <a href="#" class="item-link item-content"
+                     data-item="{{@index}}"
+                     data-context="{{stringify this}}"
+                     data-template="details"
+                  >
+                    <div class="item-media">
+                      <img width="80" src="{{this.album.images[0].url}}">
                     </div>
-                    <div class="item-subtitle">{{this.artists[0].name}}</div>
-                    <div class="item-text">{{this.album.name}}</div>
-                  </div>
-                </a>
+                    <div class="item-inner">
+                      <div class="item-title-row">
+                        <div class="item-title">{{this.name}}</div>
+                        <div class="item-after">{{durationFromMs this.duration_ms}}</div>
+                      </div>
+                      <div class="item-subtitle">{{this.artists[0].name}}</div>
+                      <div class="item-text">{{this.album.name}}</div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Swipeout actions right -->
+                <div class="swipeout-actions-right">
+                  <!-- Swipeout actions links/buttons -->
+                  <a href="#" class="share" data-item="{{@index}}">
+                    {{#if @global.material}}
+                    <i class="icon fa fa-share-alt fa-3x"></i></a>
+                  {{else}}
+                  <i class="icon fa fa-share fa-3x"></i></a>
+                  {{/if}}
+                </div>
               </li>
               {{/each}}
             </ul>
